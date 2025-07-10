@@ -4,7 +4,7 @@ pipeline {
         AWS_DEFAULT_REGION = "ap-southeast-1"
         TARGET_REGION = "ap-southeast-1"
 
-        FULL_IMAGE = "430950558682.dkr.ecr.ap-southeast-1.amazonaws.com/devops-final-assignment-backend:latest"
+        FULL_IMAGE = "634531197433.dkr.ecr.ap-southeast-1.amazonaws.com/devops-final-assignment-1-backend:latest"
         TASK_DEFINITION =""
         NEW_TASK_DEFINITION=""
         NEW_TASK_INFO=""
@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Upload image to ECR') {
             steps {
-                sh 'aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 430950558682.dkr.ecr.ap-southeast-1.amazonaws.com'
+                sh 'aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 634531197433.dkr.ecr.ap-southeast-1.amazonaws.com'
 
                 sh 'docker tag final-assignment-backend:latest ${FULL_IMAGE}'
                 
